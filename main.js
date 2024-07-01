@@ -8,11 +8,7 @@ const connection = require("./mongoDB/connection");
 
 server.use(express.json());
 
-app.use(cors({
-    origin: true, 
-    methods: 'GET,POST,PUT,DELETE',
-    allowedHeaders: 'Content-Type,Authorization',
-  }));
+app.use(cors());
 const auth = require("./router/auth");
 server.use("/user", auth);
 server.use("/api",bookrouter);
